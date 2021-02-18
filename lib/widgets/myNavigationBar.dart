@@ -1,4 +1,5 @@
 import 'package:ExpenseTracker/constants/theme.dart';
+import 'package:ExpenseTracker/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
 class MyNavigationBar extends StatefulWidget {
@@ -12,11 +13,28 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     this.setState(() {
       _activeItemIndex = index;
     });
+
+    switch (_activeItemIndex) {
+      case 0:
+        Routes.sailor.navigate('/home');
+        break;
+      case 1:
+        Routes.sailor.navigate('/transactions');
+        break;
+      case 2:
+        Routes.sailor.navigate('/notifications');
+        break;
+      case 3:
+        Routes.sailor.navigate('/profile');
+        break;
+      default:
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: MyTheme.appBarBackgorund,
       width: MediaQuery.of(context).size.width,
       height: 60,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -70,7 +88,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           ),
           MyNavigationBarItem(
             icon: AssetImage('assets/icons/user.png'),
-            index: 4,
+            index: 3,
             activeItemIndex: _activeItemIndex,
             onPress: _changeActiveIndex,
           ),

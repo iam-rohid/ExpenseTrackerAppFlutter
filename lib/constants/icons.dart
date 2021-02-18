@@ -11,4 +11,6 @@ class CustomIcons {
   static const ImageProvider user = AssetImage('assets/icons/user.png');
   static const ImageProvider bell = AssetImage('assets/icons/bell.png');
   static const ImageProvider barChart = AssetImage('assets/icons/barChart.png');
+  static const ImageProvider backArrow =
+      AssetImage('assets/icons/backArrow.png');
 }
